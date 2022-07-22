@@ -20,7 +20,7 @@ const Routes = () => {
             <Route path='/childapp' component={ChildApp} />
             <Route path='/install' component={InstallBazar} />
             <Route path='/signup' component={Signup} />
-            <Redirect to='/homePage' />
+            <Redirect to='/app' />
         </Switch>
     );
 };

@@ -27,7 +27,7 @@ function App() {
     <>  
         <HeaderDesktop />
         <HeaderMobile />
-        <Routes />
+          <Routes />
         <FooterMobile />
         <FooterDesktop />
     </>

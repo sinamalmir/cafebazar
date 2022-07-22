@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HeaderMobile = () => {
     return (
-        <div className='md:hidden bg-white shadow-lg '>
+        <div className='lg:hidden bg-white shadow-lg '>
             <div className='flex items-center justify-around p-2 '>
                 <div className='p-1 w-10  bg-zinc-200 rounded'>
                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" className=""><path d="M3.643 6.273h16.714A.631.631 0 0021 5.636.631.631 0 0020.357 5H3.643A.631.631 0 003 5.636c0 .358.281.637.643.637zm16.714 5.09H3.643A.631.631 0 003 12c0 .358.281.636.643.636h16.714A.631.631 0 0021 12a.631.631 0 00-.643-.636zm0 6.364H3.643a.631.631 0 00-.643.637c0 .358.281.636.643.636h16.714a.631.631 0 00.643-.636.631.631 0 00-.643-.637z" fill="#20222A"></path></svg>

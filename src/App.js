@@ -10,6 +10,9 @@ import FooterDesktop from "./Components/Footer/FooterDesktop";
 import HeaderMobile from './Components/Header/HeaderMobile'
 import HeaderDesktop from './Components/Header/HeaderDesktop'
 
+// context 
+import ContextProvider from "./Context/ContextProvider";
+
 function App() {
 
   // useEffect(() => {
@@ -24,13 +27,13 @@ function App() {
 
 
   return (     
-    <>  
+    <ContextProvider>  
         <HeaderDesktop />
         <HeaderMobile />
           <Routes />
         <FooterMobile />
         <FooterDesktop />
-    </>
+    </ContextProvider>
   );
 }
 

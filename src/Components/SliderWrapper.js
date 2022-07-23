@@ -1,12 +1,33 @@
 import React from 'react';
-import Slider from './Slider';
+
+import { Swiper , SwiperSlide } from 'swiper/react';
+
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import '../tailwind.css';
+import { Navigation } from "swiper";
+import { shorten } from '../helper/function';
+
+
 
 const SliderWrapper = ({appData}) => {
+
+    
+
+    // console.log(appData.simpleAppList);
+    const slidersApp = appData.simpleAppList.apps
+
+
     return (
         <div className=' container 2xl:max-w-screen-2xl mx-auto'>
         <div className='md:shadow mt-10 mb-10 md:ml-3 md:mr-3 p-3 md:border md:rounded md:bg-white '>
             <div className='flex items-center justify-between'>
-                <h4 className='md:mb-3 mb-5 '> </h4>
+                <h4 className='md:mb-3 mb-5 '>
+                    { appData.simpleAppList.title }
+                </h4>
                 <div className='flex items-center'>
                     <span className='font-normal text-sm ml-2'> بیشتر </span>
                     <span>
@@ -18,7 +39,47 @@ const SliderWrapper = ({appData}) => {
             </div>
             <hr className='mb-5 hidden md:block' />
 
-                <Slider />
+            <Swiper 
+                slidesPerView={4}
+                spaceBetween={5}
+                slidesPerGroup={3}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                pagination={{
+                clickable: true,
+                }}
+                navigation={true}
+                modules={[Navigation]}
+                className="mySwiper"
+                breakpoints={{
+                    488: {
+                      slidesPerView: 5,
+                    },
+                    666: {
+                      slidesPerView: 7,
+                    },
+                    1200: {
+                        slidesPerView: 11,
+                    }
+                  }}
+                >
+                    {
+                        slidersApp.map((item) => (
+                            <SwiperSlide
+                                className='flex items-start justify-start flex-col'
+                                key={item.info.name}
+                            >
+                                <img src={ item.info && item.info.image} alt="img" className='lg:rounded-3xl rounded-2xl mb-1 image-slider-list ' />
+                                <span className='font-normal text-sm mt-2'> {item.info && shorten(item.info.name)} </span>
+                               
+                            </SwiperSlide>
+                        ))
+                    }
+
+                </Swiper>
+
+
+                {/* <Slider /> */}
 
             </div>
     </div>
@@ -26,3 +87,14 @@ const SliderWrapper = ({appData}) => {
 };
 
 export default SliderWrapper;
+{/* <Slider key={item.info.name} data={item} /> */}
+
+{
+    {/* 
+                    {
+                        slidersApp.map(item => 
+                                <Slider key={item.info && item.info.name} data={item} /> 
+                         )
+                    } */}
+    // console.log('applications info ' ,slidersApp)
+}

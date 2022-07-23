@@ -21,6 +21,7 @@ const Routes = () => {
             <Route path='/install' component={InstallBazar} />
             <Route path='/signup' component={Signup} />
             <Redirect to='/app' />
+
         </Switch>
     );
 };

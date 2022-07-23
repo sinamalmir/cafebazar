@@ -11,15 +11,25 @@ const Applications = () => {
 
     const app = useContext(appContext);
 
-  
+    const newApp1 = app.splice(0,1);
+    const newApp2 = app.splice(0,1);
+    const newApp3 = app.splice(4,1);
+    const newApp4 = app.splice(6,1);
+    const newApp5 = app.splice(6,1);
+    const newApp6 = app.pop();
+
 
     return (
         
     <>
-    {console.log('app from api' , app)}
+    {/* {console.log('app from api' , app)} */}
+    {/* {console.log('app remove 1 element from api' , app)} */}
+
+
+
        
          {
-                app.map(data =>  <SliderWrapper key={''} appData={data} /> )
+                app.map(data =>  <SliderWrapper key={data.simpleAppList.title} appData={data} /> )
             
          }
          

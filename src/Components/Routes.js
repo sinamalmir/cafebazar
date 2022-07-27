@@ -13,7 +13,7 @@ import Signup from '../Pages/Signup';
 const Routes = () => {
     return (
         <Switch>
-            <Route path='/homePage' component={Game} />
+            <Route path='/game' component={Game} />
             <Route path='/app' component={Applications} />
             <Route path='/category-app' component={CategoryApp} />
             <Route path='/category-game' component={CategoryGame} />
